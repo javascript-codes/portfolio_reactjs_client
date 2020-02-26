@@ -1,8 +1,7 @@
-import { combineReducers } from 'redux';
-import auth from './authReducer';
+import {combineReducers} from "redux";
+import color from "./color";
 
 const rootReducer = combineReducers({
-    auth
+    color: color
 });
-
 export default rootReducer;
