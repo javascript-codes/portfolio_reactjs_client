@@ -73,3 +73,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 npm i body-parser concurrently prop-types react react-dom react-redux react-router-dom react-scripts redux redux-logger redux-thunk
 
 mkdir -p src/__test__ src/layouts src/containers src/actions src/constants src/pages/backoffice src/reducers src/router src/store src/middlewares
+mkdir -p src/components/home;
+touch src/components/home/index.js;

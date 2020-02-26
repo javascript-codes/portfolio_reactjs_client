@@ -3,9 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import AppRouter from "./router";
+import {Provider} from "react-redux";
+import {store} from "./store"
 
 ReactDOM.render(
-    <AppRouter/>,
+    <Provider store={store}>
+        <AppRouter/>
+    </Provider>,
     document.getElementById('root')
 );
 serviceWorker.unregister();

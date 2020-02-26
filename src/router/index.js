@@ -1,4 +1,5 @@
 import React from "react";
+import HomeContainer from "../containers/homeContainer";
 
 import {
     BrowserRouter as Router,
@@ -35,7 +36,7 @@ export default function AppRouter() {
                         <Users />
                     </Route>
                     <Route path="/">
-                        <Home />
+                        <HomeContainer />
                     </Route>
                 </Switch>
             </div>
@@ -43,9 +44,6 @@ export default function AppRouter() {
     );
 }
 
-function Home() {
-    return <h2>Home</h2>;
-}
 
 function About() {
     return <h2>About</h2>;
