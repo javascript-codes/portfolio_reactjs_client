@@ -1,7 +1,7 @@
 import {combineReducers} from "redux";
-import color from "./color";
+import colorReducer from "./colorReducer";
 
 const rootReducer = combineReducers({
-    color: color
+    color: colorReducer
 });
 export default rootReducer;

@@ -6,7 +6,7 @@ const initalState = {
     bgColor: 'mediumaquamarine'
 };
 
-export default function color(
+export default function colorReducer(
     state = initalState,
     action) {
     switch (action.type) {

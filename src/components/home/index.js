@@ -1,4 +1,6 @@
 import React from "react";
+import {Link} from "react-router-dom";
+import GetAllPortfolio from "../portfolio/getAllPortfolio";
 
 export default function Home(props) {
     console.log(props);
@@ -7,8 +9,13 @@ export default function Home(props) {
             backgroundColor: props.bgColor,
             height: '50vh'
         }}
-             onClick={
+             onCopy={
                  props.toggleColor
-             }><h2>Home</h2></div>
+             }>
+            <h2>Home</h2>
+            <Link to="/add_portfolio">Add portfolio</Link>
+            <br/>
+            <GetAllPortfolio/>
+        </div>
     );
 }
