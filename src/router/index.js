@@ -6,7 +6,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import AddPortfolio from "../components/portfolio/addPortfolio";
+// import AddPortfolio from "../components/portfolio/addPortfolio";
 import About from "../components/about";
 import Legals from "../components/legals";
 import Contact from "../components/contact";
@@ -36,9 +36,9 @@ export default class AppRouter extends React.Component {
                     {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
                     <Switch>
-                        <Route path="/add_portfolio">
-                            <AddPortfolio/>
-                        </Route>
+                        {/*<Route path="/add_portfolio">*/}
+                        {/*    <AddPortfolio/>*/}
+                        {/*</Route>*/}
                         <Route path="/about">
                             <About/>
                         </Route>

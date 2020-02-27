@@ -1,57 +1,61 @@
 import React , { useState } from "react";
 import { Redirect } from "react-router-dom";
 
-const AddPortfolio = props => {
-    console.log("name", props);
-    const [values, setValues] = useState({ name: "" });
-    const handleInputChange = event => {
-        const { value, name } = event.target;
-        setValues({ ...values, [name]: value });
-    };
-    const onSubmit = event => {
-        event.preventDefault();
-        props.addPortfolioAction(values);
-        // fetch("/api/auth/login", {
-        //   method: "POST",
-        //   body: JSON.stringify(values),
-        //   headers: {
-        //     "Content-Type": "application/json"
-        //   }
-        // })
-        //   .then(res => {
-        //     console.log(res.status);
-        //     if (res.status === 200) {
-        //       props.history.push("/");
-        //     } else {
-        //       const error = new Error(res.error);
-        //       throw error;
-        //     }
-        //   })
-        //   .catch(err => {
-        //     console.error(err);
-        //     alert("Error logging in please try again");
-        //   });
-    };
-    return (
-        <>
-            <h2>Add Portfolio</h2><br/>
+// const AddPortfolio = props => {
+//     console.log("name", props);
+//     const [values, setValues] = useState({ name: "" });
+//     const handleInputChange = event => {
+//         const { value, name } = event.target;
+//         setValues({ ...values, [name]: value });
+//     };
+//     const onSubmit = event => {
+//         event.preventDefault();
+//         props.addPortfolioAction(values);
+//         // fetch("/api/auth/login", {
+//         //   method: "POST",
+//         //   body: JSON.stringify(values),
+//         //   headers: {
+//         //     "Content-Type": "application/json"
+//         //   }
+//         // })
+//         //   .then(res => {
+//         //     console.log(res.status);
+//         //     if (res.status === 200) {
+//         //       props.history.push("/");
+//         //     } else {
+//         //       const error = new Error(res.error);
+//         //       throw error;
+//         //     }
+//         //   })
+//         //   .catch(err => {
+//         //     console.error(err);
+//         //     alert("Error logging in please try again");
+//         //   });
+//     };
+//     return (
+//         <>
+//             <h2>Add Portfolio</h2><br/>
+//
+//             {/*{props.user && props.isAuth && <Redirect to="/" />}*/}
+//             <form onSubmit={onSubmit}>
+//                 {/*<h1>Login Below!</h1>*/}
+//                 <input
+//                     type="text"
+//                     name="name"
+//                     placeholder="Saisir un nom"
+//                     value={values.name}
+//                     onChange={handleInputChange}
+//                     required/>
+//                 <input type="submit" value="Submit" />
+//             </form>
+//         </>
+//     );
+// };
+// export default AddPortfolio;
 
-            {/*{props.user && props.isAuth && <Redirect to="/" />}*/}
-            <form onSubmit={onSubmit}>
-                {/*<h1>Login Below!</h1>*/}
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Saisir un nom"
-                    value={values.name}
-                    onChange={handleInputChange}
-                    required/>
-                <input type="submit" value="Submit" />
-            </form>
-        </>
-    );
-};
-export default AddPortfolio;
+
+
+
 // import React, { useState } from 'react';
 // import Input from '../components/Input';
 // import axios from 'axios';
