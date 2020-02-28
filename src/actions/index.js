@@ -1,4 +1,10 @@
-import {UPDATE_COLOR} from "../constants";
+import axios from "axios";
+
+import {
+    CREATE_PORTFOLIO_ACTION,
+    PORTFOLIO_API_URL,
+    UPDATE_COLOR
+} from "../constants";
 
 export const toggleColor = (stringColor) => {
     return dispatch => {
@@ -9,22 +15,25 @@ export const toggleColor = (stringColor) => {
     }
 };
 
+export const addPortfolioAction = value => {
+    return async (dispatch) => {
+        try {
+            dispatch({
+                type: CREATE_PORTFOLIO_ACTION,
+                payload: await addPortfolioPayload()
+            })
+        } catch (e) {
+            console.error(e)
+        }
+    };
 
-// export const logginAction = values => {
-//     return dispatch => {
-//         return fetch("/api/auth/login", {
-//             method: "POST",
-//             body: JSON.stringify(values),
-//             headers: {
-//                 "Content-Type": "application/json"
-//             }
-//         })
-//             .then(res => {
-//                 dispatch(getUserAction());
-//             })
-//             .catch(err => {
-//                 console.error(err);
-//                 alert("Error logging in please try again");
-//             });
-//     };
-// };
+    async function addPortfolioPayload() {
+        return await axios.post(PORTFOLIO_API_URL, {name: value})
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+};

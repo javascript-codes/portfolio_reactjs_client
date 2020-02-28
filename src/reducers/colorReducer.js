@@ -9,6 +9,8 @@ const initalState = {
 export default function colorReducer(
     state = initalState,
     action) {
+    console.log("action : ",action);
+
     switch (action.type) {
         case types.UPDATE_COLOR:
             const newColor = state.bgColor === "hotpink" ?

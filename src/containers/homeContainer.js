@@ -4,7 +4,6 @@ import Home from "../components/home";
 import {toggleColor} from "../actions";
 
 const mapStateToProps=(state)=>{
-    console.log("state: ",state);
     return state.color;
 };
 

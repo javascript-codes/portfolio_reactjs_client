@@ -1,1 +1,8 @@
+export const PORTFOLIO_API_URL= process.env.REACT_APP_BASE_URL+
+    process.env.REACT_APP_BASE_URL_API_PREFIX +
+    process.env.REACT_APP_BASE_URL_API_RESOURCES_PORTFOLIO;
+
+
+//actions types
 export const UPDATE_COLOR = 'UPDATE_COLOR';
+export const CREATE_PORTFOLIO_ACTION="CREATE_PORTFOLIO_ACTION";

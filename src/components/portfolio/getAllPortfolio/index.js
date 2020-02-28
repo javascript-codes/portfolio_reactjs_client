@@ -1,17 +1,11 @@
 import React, {useEffect, useState} from 'react';
-
-import ItemPortfolio from "../itemPortfolio";
-
 import axios from "axios";
-
+import ItemPortfolio from "../itemPortfolio";
+import {PORTFOLIO_API_URL} from "../../../constants";
 
 export default function GetAllPortfolio() {
-    const portfolioUrlQuery = process.env.REACT_APP_BASE_URL+
-        process.env.REACT_APP_BASE_URL_API_PREFIX +
-        process.env.REACT_APP_BASE_URL_API_RESOURCES_PORTFOLIO;
-
     useEffect(() => {
-        getAll(portfolioUrlQuery);
+        getAll(PORTFOLIO_API_URL);
     }, []);
 
     const [portfolios, setPortfolios] = useState([]);
@@ -26,8 +20,8 @@ export default function GetAllPortfolio() {
     };
 
     return <><h2>List of your portfolio</h2>
-        {portfolios && portfolios.map((portfolio, i) => {
-            return (<ItemPortfolio portfolio={portfolio}/>);
+        {portfolios && portfolios.map((portfolio,i) => {
+            return (<ItemPortfolio key={i} portfolio={portfolio}/>);
         })}
     </>;
 }
