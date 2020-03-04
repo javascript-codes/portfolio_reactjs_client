@@ -1,5 +1,11 @@
 import axios from "axios";
-import {CREATE_PORTFOLIO_ACTION, HTTP_HEADER_THE_TIMEZONE_IANA, PORTFOLIO_API_URL, UPDATE_COLOR} from "../constants";
+import {
+    CREATE_PORTFOLIO_ACTION,
+    HTTP_HEADER_THE_TIMEZONE_IANA,
+    PORTFOLIO_API_URL,
+    REACT_ROUTE_PORTFOLIO_DASHBOARD,
+    UPDATE_COLOR
+} from "../constants";
 
 
 export const toggleColor = (stringColor) => {
@@ -11,7 +17,7 @@ export const toggleColor = (stringColor) => {
     }
 };
 
-export const addPortfolioAction = value => {
+export const addPortfolioAction = (value, ownProps) => {
     return async (dispatch) => {
         try {
             dispatch({
@@ -27,9 +33,8 @@ export const addPortfolioAction = value => {
         return await axios.post(PORTFOLIO_API_URL, {name: value})
             .then(function (response) {
                 console.log(response);
-                // if(response.status===){
-                // browserHistory.
-                // }
+                //TODO: "/dashboard/{id}"
+                ownProps.history.push(REACT_ROUTE_PORTFOLIO_DASHBOARD)
             })
             .catch(function (error) {
                 console.log(error);
