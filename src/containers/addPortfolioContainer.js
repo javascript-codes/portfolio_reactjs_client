@@ -3,7 +3,7 @@ import {addPortfolioAction} from "../actions";
 import AddPortfolio from "../components/portfolio/addPortfolio";
 
 const mapStateToProps = (state) => {
-    return state.portfolio;
+    return state;
 };
 
 

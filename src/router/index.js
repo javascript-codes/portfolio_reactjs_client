@@ -10,6 +10,7 @@ import AddPortfolioContainer from "../containers/addPortfolioContainer";
 import About from "../components/about";
 import Legals from "../components/legals";
 import Contact from "../components/contact";
+import PortfolioDashboard from "../components/portfolio/portfolioDashboard";
 
 export default class AppRouter extends React.Component {
     render() {
@@ -21,6 +22,9 @@ export default class AppRouter extends React.Component {
                     [<Link to="/contact">Contact</Link>]
                     [<Link to="/legals">Legals</Link>]
                     <Switch>
+                        <Route path="/dashboard">
+                            <PortfolioDashboard/>
+                        </Route>
                         <Route path="/add_portfolio">
                             <AddPortfolioContainer/>
                         </Route>
