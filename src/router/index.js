@@ -22,7 +22,7 @@ export default class AppRouter extends React.Component {
                     [<Link to="/contact">Contact</Link>]
                     [<Link to="/legals">Legals</Link>]
                     <Switch>
-                        <Route path="/dashboard">
+                        <Route path="/dashboard/:id">
                             <PortfolioDashboard/>
                         </Route>
                         <Route path="/add_portfolio">

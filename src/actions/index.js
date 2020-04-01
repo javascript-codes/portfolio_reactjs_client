@@ -2,6 +2,7 @@ import axios from "axios";
 import {
     CREATE_PORTFOLIO_ACTION,
     HTTP_HEADER_THE_TIMEZONE_IANA,
+    MODEL_FIELD_NAME_PORTFOLIO_ID,
     PORTFOLIO_API_URL,
     REACT_ROUTE_PORTFOLIO_DASHBOARD,
     UPDATE_COLOR
@@ -31,14 +32,12 @@ export const addPortfolioAction = (value, ownProps) => {
 
     async function addPortfolioPayload() {
         return await axios.post(PORTFOLIO_API_URL, {name: value})
-            .then(function (response) {
+            .then((response) => {
                 console.log(response);
-                //TODO: "/dashboard/{id}"
-                ownProps.history.push(REACT_ROUTE_PORTFOLIO_DASHBOARD)
+                const portfolioId = response.data[MODEL_FIELD_NAME_PORTFOLIO_ID];
+                ownProps.history.push(`${REACT_ROUTE_PORTFOLIO_DASHBOARD}/${portfolioId}`);
             })
-            .catch(function (error) {
-                console.log(error);
-            });
+            .catch(error => console.log(error));
     }
 };
 

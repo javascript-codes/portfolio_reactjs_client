@@ -25,3 +25,13 @@ export const REACT_ROUTE_PORTFOLIO_DASHBOARD = "/dashboard";
 //actions types
 export const UPDATE_COLOR = 'UPDATE_COLOR';
 export const CREATE_PORTFOLIO_ACTION = "CREATE_PORTFOLIO_ACTION";
+
+// model
+export const MODEL_FIELD_NAME_PORTFOLIO_ID = 'id';
+export const MODEL_FIELD_NAME_PORTFOLIO_NAME = 'name';
+export const MODEL_FIELD_NAME_PORTFOLIO_CREATED_AT = 'createdAt';
+export const MODEL_FIELD_NAME_PORTFOLIO_UPDATED_AT = 'updatedAt';
+
+// validation
+export const PORTFOLIO_NAME_CONSTRAINT_MIN_SIZE = 1;
+export const PORTFOLIO_NAME_CONSTRAINT_MAX_SIZE = 32;

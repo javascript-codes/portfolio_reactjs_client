@@ -3,7 +3,7 @@ import axios from "axios";
 import ItemPortfolio from "../itemPortfolio";
 import {PORTFOLIO_API_URL} from "../../../constants";
 
-export default function GetAllPortfolio() {
+export default () => {
     useEffect(() => {
         getAll(PORTFOLIO_API_URL);
     }, []);
